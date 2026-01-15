@@ -11,9 +11,7 @@ import { theme } from "theme";
 import Navbar from "components/Navbar/Navbar";
 import Footer from "components/Footer";
 import VisualEditing from "app/visual-editing";
-import Script from "next/script";
 import PageTracking from "components/PageTracking";
-import CookieBanner from "shared/components/CookieBanner";
 import { Suspense } from "react";
 
 const dmSans = DM_Sans({
@@ -30,13 +28,11 @@ export const metadata = {
     template: "Locust Cloud | %s",
   },
   description: {
-    default:
-      "",
+    default: "",
   },
   openGraph: {
     title: "Locust Cloud",
-    description:
-      "",
+    description: "",
     url: "https://www.locust.cloud",
     siteName: "Locust Cloud",
     images: [
@@ -106,7 +102,6 @@ export default async function RootLayout({
           }}
         />
         <ThemeProvider theme={theme}>
-          <CookieBanner />
           <Box
             component="body"
             sx={{

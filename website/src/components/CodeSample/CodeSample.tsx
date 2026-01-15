@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import {
@@ -45,75 +44,69 @@ export default function CodeSample() {
   };
 
   return;
-   (
-    <Box>
-      <Typography
-        sx={{ textAlign: "center", mb: 3 }}
-        variant="h4"
-        component="h2"
+  <Box>
+    <Typography sx={{ textAlign: "center", mb: 3 }} variant="h4" component="h2">
+      Scenarios in Plain Python
+    </Typography>
+    <Motion
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true, amount: 0.5 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
+      <Paper
+        elevation={0}
+        variant="outlined"
+        sx={{ borderRadius: 4, height: 400 }}
       >
-        Scenarios in Plain Python
-      </Typography>
-      <Motion
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true, amount: 0.5 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-      >
-        <Paper
-          elevation={0}
-          variant="outlined"
-          sx={{ borderRadius: 4, height: 400 }}
+        <Box
+          sx={{
+            display: { md: "grid" },
+            gridTemplateColumns: { md: "240px 1fr" },
+            height: "100%",
+          }}
         >
           <Box
             sx={{
-              display: { md: "grid" },
-              gridTemplateColumns: { md: "240px 1fr" },
-              height: "100%",
+              borderRight: { md: "1px solid" },
+              borderColor: { md: "divider" },
             }}
           >
-            <Box
-              sx={{
-                borderRight: { md: "1px solid" },
-                borderColor: { md: "divider" },
-              }}
-            >
-              <List disablePadding>
-                {items.map((label) => (
-                  <ListItemButton
-                    component="li"
-                    key={label}
-                    selected={label === active}
-                    onClick={() => setActive(label)}
-                    sx={{ borderRadius: 0, py: 2 }}
-                  >
-                    <ListItemText primary={label} />
-                  </ListItemButton>
-                ))}
-              </List>
-            </Box>
-
-            <Paper
-              variant="outlined"
-              sx={{
-                position: "relative",
-                overflowX: "scroll",
-              }}
-            >
-              <Box sx={{ position: "absolute", right: 2, top: 2 }}>
-                <Tooltip title="Copy">
-                  <IconButton onClick={handleCopy} aria-label="Copy code">
-                    <ContentCopyIcon />
-                  </IconButton>
-                </Tooltip>
-              </Box>
-              <CodeBlock language={activeSnippet.language} showLineNumbers>
-                {activeSnippet.code}
-              </CodeBlock>
-            </Paper>
+            <List disablePadding>
+              {items.map((label) => (
+                <ListItemButton
+                  component="li"
+                  key={label}
+                  selected={label === active}
+                  onClick={() => setActive(label)}
+                  sx={{ borderRadius: 0, py: 2 }}
+                >
+                  <ListItemText primary={label} />
+                </ListItemButton>
+              ))}
+            </List>
           </Box>
-        </Paper>
-      </Motion>
-    </Box>
-  );
+
+          <Paper
+            variant="outlined"
+            sx={{
+              position: "relative",
+              overflowX: "scroll",
+            }}
+          >
+            <Box sx={{ position: "absolute", right: 2, top: 2 }}>
+              <Tooltip title="Copy">
+                <IconButton onClick={handleCopy} aria-label="Copy code">
+                  <ContentCopyIcon />
+                </IconButton>
+              </Tooltip>
+            </Box>
+            <CodeBlock language={activeSnippet.language} showLineNumbers>
+              {activeSnippet.code}
+            </CodeBlock>
+          </Paper>
+        </Box>
+      </Paper>
+    </Motion>
+  </Box>;
 }
