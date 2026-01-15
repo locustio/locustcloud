@@ -1,11 +1,10 @@
 "use client";
 import { Alert, Box, Container, TextField, Typography } from "@mui/material";
-import Recaptcha from "components/Recaptcha";
 import { useSearchParams } from "next/navigation";
 import { Suspense, useState } from "react";
-import Form from "shared/components/Form/Form";
-import LoadingButton from "shared/components/Form/LoadingButton";
-import Select from "shared/components/Form/Select";
+import Form from "components/Form/Form";
+import LoadingButton from "components/Form/LoadingButton";
+import Select from "components/Form/Select";
 
 const planOptions = [
   "Free Self-Managed (on-prem)",
@@ -148,7 +147,7 @@ export default function GetStartedForm() {
             </Typography>
           </Box>
         ) : (
-          <Form onSubmit={onSubmit}>
+          <Form<IGetStartedForm> onSubmit={onSubmit}>
             <Suspense
               fallback={
                 <Select
@@ -189,7 +188,6 @@ export default function GetStartedForm() {
             >
               Get in Touch
             </LoadingButton>
-            <Recaptcha />
           </Form>
         )}
       </Box>

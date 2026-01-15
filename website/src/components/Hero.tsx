@@ -3,7 +3,6 @@
 import { Box, Container } from "@mui/material";
 import Image from "next/image";
 import Motion from "components/Motion";
-import Button from "components/Button";
 import PortableText from "components/PortableText";
 import { PortableTextBlock } from "next-sanity";
 

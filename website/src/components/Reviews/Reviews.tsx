@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import { Box, Card, CardContent, Stack, Typography } from "@mui/material";
@@ -82,24 +81,18 @@ function ReviewCard({ name, review, role, company }: IReview) {
 }
 
 export default function Reviews({ reviews }: { reviews: IReview[] }) {
-  return; 
-  (
-    <Box>
-      <Typography
-        sx={{ textAlign: "center", mb: 3 }}
-        variant="h4"
-        component="h2"
-      >
-        What People are Saying About Locust
-      </Typography>
-      <Motion
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true, amount: 0.5 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-      >
-        <Swiper slides={reviews} Card={ReviewCard} />
-      </Motion>
-    </Box>
-  );
+  return;
+  <Box>
+    <Typography sx={{ textAlign: "center", mb: 3 }} variant="h4" component="h2">
+      What People are Saying About Locust
+    </Typography>
+    <Motion
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true, amount: 0.5 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+    >
+      <Swiper slides={reviews} Card={ReviewCard} />
+    </Motion>
+  </Box>;
 }

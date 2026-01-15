@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import { Box, SvgIcon, Typography } from "@mui/material";
 import Swiper from "components/Swiper";
@@ -69,37 +68,35 @@ function CompanyCard({ name, logo: Logo }: { name: string; logo: string }) {
 
 export default function CompanyScroller() {
   return;
-   (
-    <Box
-      sx={{
-        textAlign: "center",
-        ".swiper": {
-          maskImage: `linear-gradient(to right, transparent 0%, white 10%, white 90%, transparent 100%)`,
-        },
-        ".swiper-slide": { my: "auto" },
-        ".swiper-wrapper": {
-          transitionTimingFunction: "linear !important",
-        },
+  <Box
+    sx={{
+      textAlign: "center",
+      ".swiper": {
+        maskImage: `linear-gradient(to right, transparent 0%, white 10%, white 90%, transparent 100%)`,
+      },
+      ".swiper-slide": { my: "auto" },
+      ".swiper-wrapper": {
+        transitionTimingFunction: "linear !important",
+      },
+    }}
+  >
+    <Typography variant="h4" component="h2" sx={{ mb: 3 }}>
+      Trusted by
+    </Typography>
+    <Swiper
+      autoplay={{ delay: 1, disableOnInteraction: false }}
+      loop
+      speed={8000}
+      allowTouchMove={false}
+      freeMode={{
+        enabled: true,
+        momentum: false,
       }}
-    >
-      <Typography variant="h4" component="h2" sx={{ mb: 3 }}>
-        Trusted by
-      </Typography>
-      <Swiper
-        autoplay={{ delay: 1, disableOnInteraction: false }}
-        loop
-        speed={8000}
-        allowTouchMove={false}
-        freeMode={{
-          enabled: true,
-          momentum: false,
-        }}
-        breakpoints={swiperBreakpoints}
-        navigation={false}
-        pagination={false}
-        Card={CompanyCard}
-        slides={companies}
-      />
-    </Box>
-  );
+      breakpoints={swiperBreakpoints}
+      navigation={false}
+      pagination={false}
+      Card={CompanyCard}
+      slides={companies}
+    />
+  </Box>;
 }

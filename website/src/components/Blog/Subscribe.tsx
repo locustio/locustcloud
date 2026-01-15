@@ -2,8 +2,8 @@
 import { Alert, TextField, Typography, Button, Box } from "@mui/material";
 import Modal from "components/Modal";
 import { useState } from "react";
-import Form from "shared/components/Form/Form";
-import LoadingButton from "shared/components/Form/LoadingButton";
+import Form from "components/Form/Form";
+import LoadingButton from "components/Form/LoadingButton";
 
 const unexpectedErrorMessage =
   "We're sorry but something seems to have gone wrong. Please try again.";

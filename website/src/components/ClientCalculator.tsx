@@ -1,7 +1,7 @@
 "use client";
 import { Box } from "@mui/material";
 import { useRouter } from "next/navigation";
-import Calculator from "shared/components/Calculator";
+import Calculator from "components/Calculator";
 
 export interface ICalculatorProps {
   title: string;
