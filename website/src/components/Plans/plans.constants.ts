@@ -1,0 +1,18 @@
+export const PLANS = {
+  FREE: "FREE",
+  PREMIUM: "PREMIUM",
+  ENTERPRISE: "ENTERPRISE",
+};
+
+export const STRIPE_TIER_MAP = {
+  [PLANS.FREE]: "free",
+  [PLANS.PREMIUM]: "price_1PvI2YCuBZXWPilcfGIzNAiA",
+  [PLANS.ENTERPRISE]: "enterprise",
+};
+
+export const PREMIUM_PLANS = {
+  [PLANS.PREMIUM]: [PLANS.PREMIUM],
+  [PLANS.ENTERPRISE]: [PLANS.ENTERPRISE],
+};
+
+export const PLANS_ORDER = [PLANS.FREE, PLANS.PREMIUM, PLANS.ENTERPRISE];
