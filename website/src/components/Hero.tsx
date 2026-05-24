@@ -50,10 +50,10 @@ export default function Hero({
             component="p"
             variant="h3"
         >
-            <a href="https://github.com/locustio/locust">Locust</a> - Write scalable load tests in plain Python using open source 🚗💨
+            <a href="https://github.com/locustio/locust">Locust</a>—Write scalable load tests in plain Python using open source 🚗💨
             <br/><br/>
 
-            For hosted load testing with detailed reporting, check out <a href="https://learn.microsoft.com/azure/app-testing/load-testing/quickstart-create-run-load-test-with-locust?tabs=portal">Azure Load testing</a>!
+            For Locust-based hosted load testing with detailed reporting, check out <a href="https://learn.microsoft.com/azure/app-testing/load-testing/quickstart-create-run-load-test-with-locust?tabs=portal">Azure Load testing</a>!
       </Typography>
           <PortableText value={header} />
         </Box>
