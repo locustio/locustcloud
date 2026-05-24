@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Container } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import Image from "next/image";
 import Motion from "components/Motion";
 import PortableText from "components/PortableText";
@@ -45,37 +45,19 @@ export default function Hero({
             pr: { lg: 6, xl: 10 },
           }}
         >
+        <Typography
+            sx={{ textAlign: "justify" }}
+            component="p"
+            variant="h3"
+        >
+            <a href="https://github.com/locustio/locust">Locust</a> - Write scalable load tests in plain Python using open source 🚗💨
+            <br/><br/>
+
+            For hosted load testing with detailed reporting, check out <a href="https://learn.microsoft.com/azure/app-testing/load-testing/quickstart-create-run-load-test-with-locust?tabs=portal">Azure Load testing</a>!
+      </Typography>
           <PortableText value={header} />
         </Box>
       </Container>
-
-      <Box
-        sx={{
-          right: 0,
-          pl: { xs: 2, lg: 0 },
-          width: { xs: "100%", lg: 800 },
-          height: "auto",
-        }}
-      >
-        <Motion
-          className="motion"
-          initial={{ x: 300, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{
-            ease: "easeOut",
-            duration: 0.4,
-          }}
-        >
-          <Image
-            alt="Charts"
-            src="/charts.webp"
-            style={{ width: "100%", height: "auto", margin: "10px 0" }}
-            width={800}
-            height={800}
-            priority
-          />
-        </Motion>
-      </Box>
     </Box>
   );
 }

@@ -26,9 +26,9 @@ const NAV_LINKS_QUERY = `*[_type == "navLinks"][0]{
 }`;
 
 export default async function Navbar() {
-  const { navLinks } = await sanityFetch<{
-    navLinks: INavLink[];
-  }>(NAV_LINKS_QUERY);
+//   const { navLinks } = await sanityFetch<{
+//     navLinks: INavLink[];
+//   }>(NAV_LINKS_QUERY);
 
   return (
     <AppBar
@@ -77,7 +77,7 @@ export default async function Navbar() {
               columnGap: 1,
             }}
           >
-            {navLinks.map((props, index) => (
+            {/* {navLinks.map((props, index) => (
               <NavLink key={`nav-item-${index}`} {...props} />
             ))}
             <ListItem>
@@ -92,13 +92,13 @@ export default async function Navbar() {
               >
                 <GithubIcon />
               </IconButton>
-            </ListItem>
+            </ListItem> */}
 
             {/* <ListItem>
               <DarkLightToggle />
             </ListItem> */}
           </List>
-          <MobileMenu navLinks={navLinks} />
+          {/* <MobileMenu navLinks={navLinks} /> */}
         </Toolbar>
       </Container>
     </AppBar>

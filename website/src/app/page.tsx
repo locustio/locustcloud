@@ -7,17 +7,19 @@ import Hero from "components/Hero";
 import ReviewsContainer from "components/Reviews/Reviews.container";
 import { sanityFetch } from "sanity/client";
 import { ICmsPage } from "types/cmsPage.types";
-
+import { Typography, Grid, Divider } from "@mui/material";
 const PAGE_QUERY = `*[_type == "hero"][0]{
   header
 }`;
 
 export default async function IndexPage() {
-  const { header } = await sanityFetch<ICmsPage>(PAGE_QUERY);
+  const data = await sanityFetch<ICmsPage | null>(PAGE_QUERY);
+  const header = data?.header ?? null;
 
   return (
     <Box>
       <Hero header={header} />
+
       <Container
         maxWidth="xl"
         sx={{

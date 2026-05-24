@@ -103,14 +103,6 @@ export default function Footer() {
             sx={{ display: "flex", flexDirection: "column", rowGap: 2, mb: 1 }}
           >
             <Logo />
-            <Typography
-              sx={{ textAlign: "justify" }}
-              component="p"
-              variant="body2"
-            >
-              Simple, powerful load testing with hosted load generators and
-              detailed reporting.
-            </Typography>
             <SocialLinks />
           </Grid>
 
